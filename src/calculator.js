@@ -2,11 +2,16 @@
 
 // Operações suportadas: adição (add), subtração (subtract),
 // multiplicação (multiply) e divisão (divide).
+const addition = (a, b) => a + b;
+const subtraction = (a, b) => a - b;
+const multiplication = (a, b) => a * b;
+const division = (a, b) => a / b;
+
 const operations = {
-  add: (a, b) => a + b,
-  subtract: (a, b) => a - b,
-  multiply: (a, b) => a * b,
-  divide: (a, b) => a / b,
+  add: addition,
+  subtract: subtraction,
+  multiply: multiplication,
+  divide: division,
 };
 
 if (require.main === module) {
@@ -33,4 +38,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = operations;
+module.exports = { addition, subtraction, multiplication, division };

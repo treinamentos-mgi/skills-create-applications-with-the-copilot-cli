@@ -2,22 +2,22 @@
 
 const { spawnSync } = require('node:child_process');
 const path = require('node:path');
-const { add, subtract, multiply, divide } = require('../calculator');
+const { addition, subtraction, multiplication, division } = require('../calculator');
 
 describe('operações aritméticas', () => {
   test.each([
-    [add, 2, 3, 5],
-    [add, -5, 2, -3],
-    [add, 0, 0, 0],
-    [subtract, 10, 4, 6],
-    [subtract, 4, 10, -6],
-    [subtract, -4, -10, 6],
-    [multiply, 45, 2, 90],
-    [multiply, -2.5, 4, -10],
-    [multiply, 123, 0, 0],
-    [divide, 20, 5, 4],
-    [divide, -9, 2, -4.5],
-    [divide, 0, 5, 0],
+    [addition, 2, 3, 5],
+    [addition, -5, 2, -3],
+    [addition, 0, 0, 0],
+    [subtraction, 10, 4, 6],
+    [subtraction, 4, 10, -6],
+    [subtraction, -4, -10, 6],
+    [multiplication, 45, 2, 90],
+    [multiplication, -2.5, 4, -10],
+    [multiplication, 123, 0, 0],
+    [division, 20, 5, 4],
+    [division, -9, 2, -4.5],
+    [division, 0, 5, 0],
   ])('%p(%s, %s) = %s', (operation, a, b, expected) => {
     expect(operation(a, b)).toBe(expected);
   });
